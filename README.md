@@ -30,6 +30,15 @@ Very flexible and maintainable.
 - Express Intent
 - Maintainable
 
+## Gradle Builds
+
+* Gradle has a build file
+  - Typically `build.gradle`
+
+* Thins contains `tasks`
+- And plugins
+- And dependencies
+- But mostly tasks
 
 ## Install
 
