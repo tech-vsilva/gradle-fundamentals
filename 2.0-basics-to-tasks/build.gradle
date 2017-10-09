@@ -1,0 +1,35 @@
+
+// 'gradle tasks', only shows public tasks
+
+project.task('Task1') // will not be shown, since has no group so it will be considered private
+
+// since it belongs to a group, it will be considered public
+// https://goo.gl/YMbYzc
+
+task myTask{
+  group = 'my group'
+  description = 'my description'
+}
+
+task("Task2")
+
+task "Task3"
+
+// gradle --all will show all the tasks (private and public)
+
+task Task4
+Task4.description='This is my task 4 description'
+Task4.doLast {println "This is Task 4"} // doLast is an action
+
+Task3 << {println "This is task 3"}
+
+// {} this is a closure
+task Task5 << {println "this is task 5"}
+Task5 << {println "Another closure"}
+
+task Task6 {
+  description = 'This is task 6'
+  doLast{
+    println 'This is doLast action from Task6'
+  }
+}
